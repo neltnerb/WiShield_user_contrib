@@ -49,6 +49,8 @@ extern "C" {
 boolean WiShield::init(U8 seconds)
 {
 	boolean retVal = false;
+	// Reset WIFI chip to eliminate any nasty persistent state.
+	zg_chip_reset();
 	zg_init();
 
 #ifdef USE_DIG0_INTR
